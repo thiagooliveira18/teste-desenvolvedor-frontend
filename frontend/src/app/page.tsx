@@ -1,5 +1,6 @@
 'use client'
 
+import ButtonMedicine from "@/components/ButtonMedicine";
 import InputArea from "@/components/InputArea";
 import { useEffect, useState } from "react";
 
@@ -29,9 +30,12 @@ export default function Home() {
           <ul>
             {
               info.map((remedio: any)=>(
-                <li key={remedio.id}>
-                  {remedio.name}
-                </li>
+                <ButtonMedicine
+                  key={remedio.id}
+                  name={remedio.name}
+                  company={remedio.company}
+                  published_at={remedio.published_at}  
+                />
               ))
             }
           </ul>
