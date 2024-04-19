@@ -2,7 +2,7 @@
 
 import ButtonMedicine from "@/components/ButtonMedicine";
 import InputArea from "@/components/InputArea";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const URL = 'http://localhost:3000/';
 
@@ -11,13 +11,18 @@ export default function Home() {
   const [text, setText] = useState('');
 
   useEffect(() => {
-      fetch(`${URL}data?_page=1`)
+      fetch(`${URL}data`)
       .then((res)=>res.json())
       .then((res: any)=>{
-        console.log(res);
-        setInfo(res.data)
+        setInfo(res)
       })
   }, []);
+
+  
+  const medicinesFiltered = useMemo(() => {
+    const lowerSearch = text.toLowerCase();
+    return info.filter((medicine: any) => medicine.name.toLowerCase().includes(lowerSearch));
+  }, [text, info]) 
 
   return (
     <main>
@@ -29,12 +34,13 @@ export default function Home() {
         info && (
           <ul>
             {
-              info.map((remedio: any)=>(
+              medicinesFiltered.map((medicine: any)=>(
                 <ButtonMedicine
-                  key={remedio.id}
-                  name={remedio.name}
-                  company={remedio.company}
-                  published_at={remedio.published_at}  
+                  key={medicine.id}
+                  id={medicine.id}
+                  name={medicine.name}
+                  company={medicine.company}
+                  published_at={medicine.published_at}  
                 />
               ))
             }
