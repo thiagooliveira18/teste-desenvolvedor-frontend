@@ -1,3 +1,5 @@
+import useDebounce from "@/Hooks/useDebounce";
+import { useState } from "react";
 
 interface Props {
     value: string;
@@ -5,14 +7,19 @@ interface Props {
 }
 
 export default function InputArea ({ value, onChange }: Props){
+    const [displayValue, setDisplayValue] = useState(value);
+    
+    const debouncedChange = useDebounce( onChange, 500 )
+
     function handleChange(event: any) {
-        onChange(event.target.value);
+        setDisplayValue(event.target.value);
+        debouncedChange(event.target.value);
     }
 
     return (
         <input 
             type='search' 
-            value={value} 
+            value={displayValue} 
             onChange={handleChange}
         />
     );
