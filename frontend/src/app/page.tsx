@@ -1,9 +1,13 @@
 'use client'
 
+import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import ButtonMedicine from "@/components/ButtonMedicine";
 import InputArea from "@/components/InputArea";
 import Pagination from "@/components/Pagination/inde";
-import { useEffect, useMemo, useState } from "react";
+
+import Logo from '../../public/logo.png';
+import Link from "next/link";
 
 const URL = 'http://localhost:3000/';
 
@@ -42,10 +46,16 @@ export default function Home() {
 
   return (
     <main>
-      <InputArea 
-        value={text} 
-        onChange={(str: string) => setText(str)} 
-      />
+      <div className="header">
+        <Link href="https://dotlib.com/">
+          <Image src={Logo} alt="Logo DotLib" className="logo" />
+        </Link>
+        <h1 className="title">Bulatório Eletrônico</h1>
+        <InputArea 
+          value={text} 
+          onChange={(str: string) => setText(str)} 
+        />
+      </div>      
       <Pagination 
         limit={LIMIT} 
         total={totalItens} 

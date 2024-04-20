@@ -1,3 +1,4 @@
+import "./styles.css"
 
 interface Props {
     limit: number;
@@ -16,13 +17,14 @@ export default function Pagination({ limit, total, offset, setOffset, setPage }:
     const first = Math.max(currentPage - MAX_LEFT, 1);
 
     return(
-        <ul>
+        <ul className="ul-pagination">
             {
                 Array.from({length: Math.min(MAX_ITEMS, pages)})
                     .map((_, index) => index + first)
                     .map((page, index) => (
                         <li key={index}>
-                            <button 
+                            <button
+                                className="button-pagination"
                                 onClick={() => {
                                     setOffset((page - 1) * limit);
                                     setPage(page);

@@ -19,7 +19,6 @@ export default function InputArea ({ value, onChange }: Props){
 
     return (
         <div className="input-container">
-            <h1 className="input-title">Bulatório Eletrônico</h1>
             <input 
                 type='search' 
                 value={displayValue} 
