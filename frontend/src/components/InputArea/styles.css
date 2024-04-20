@@ -1,0 +1,23 @@
+.input-container {
+    width: 100%;
+    height: 10rem;
+    background-color: #00ffff;
+    border-bottom: 2px solid #c2c2c2;
+    
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-title{
+    font-size: 2.3rem;
+}
+.input-area {
+    width: 13rem;
+    height: 2.4rem;
+    border-radius: 20px;
+    padding: 13px;
+    font-size: 1.2rem;
+    text-align: center;
+}

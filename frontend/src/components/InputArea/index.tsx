@@ -1,5 +1,6 @@
 import useDebounce from "@/Hooks/useDebounce";
 import { useState } from "react";
+import "./styles.css";
 
 interface Props {
     value: string;
@@ -17,10 +18,15 @@ export default function InputArea ({ value, onChange }: Props){
     }
 
     return (
-        <input 
-            type='search' 
-            value={displayValue} 
-            onChange={handleChange}
-        />
+        <div className="input-container">
+            <h1 className="input-title">Bulatório Eletrônico</h1>
+            <input 
+                type='search' 
+                value={displayValue} 
+                onChange={handleChange}
+                className="input-area"
+                placeholder="Pesquise Aqui."
+            />
+        </div>
     );
 }
