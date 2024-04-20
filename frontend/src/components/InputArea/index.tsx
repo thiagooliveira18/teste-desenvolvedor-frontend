@@ -9,7 +9,7 @@ interface Props {
 export default function InputArea ({ value, onChange }: Props){
     const [displayValue, setDisplayValue] = useState(value);
     
-    const debouncedChange = useDebounce( onChange, 500 )
+    const debouncedChange = useDebounce( onChange, 500 );
 
     function handleChange(event: any) {
         setDisplayValue(event.target.value);
