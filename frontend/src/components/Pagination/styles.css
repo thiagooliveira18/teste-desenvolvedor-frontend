@@ -3,7 +3,7 @@
     height: 3.7rem;
     border-bottom: 2px solid #c2c2c2;
     margin-bottom: 5px;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,12 +16,9 @@
     height: 2rem;
     border-radius: 20px;
     border: 2px solid #000;
-}
-
-.button-pagination:active {
-    background-color: #a9a9a9;
+    transition: .15s ease-in-out;
 }
 
 .button-pagination:hover {
-    background-color: #99B933;
+    background-color: #afd13f;
 }

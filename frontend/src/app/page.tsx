@@ -70,7 +70,7 @@ export default function Home() {
       />
       {
         data && !text && (
-          <ul className="">
+          <ul className="list-container">
             {
               dataCurrentPage.map((medicine: any)=>(
                 <ButtonMedicine
@@ -87,7 +87,7 @@ export default function Home() {
       }
       {
         data && text && (
-          <ul>
+          <ul className="list-container">
             {
               medicinesFiltered.map((medicine: any)=>(
                 <ButtonMedicine

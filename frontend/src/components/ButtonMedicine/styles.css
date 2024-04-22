@@ -10,10 +10,12 @@
     align-items: flex-start;
     justify-content: center;
     gap: 1.5rem;
+    transition: .15s ease-in-out;
 }
 
 .button-container:hover {
     background-color: #afd13f;
+    transition: .15s ease-in-out;
 }
 
 .button-text {

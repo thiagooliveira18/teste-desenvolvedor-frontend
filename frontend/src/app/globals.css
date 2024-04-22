@@ -45,3 +45,15 @@ main {
 .t-r {
   color: #99B933;
 }
+
+.list-container {
+  width: 60%;
+  margin-bottom: 5px;
+
+}
+
+@media screen and (max-width: 600px){
+    .list-container {
+      width: 95%;
+    }
+}
