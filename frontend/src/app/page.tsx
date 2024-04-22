@@ -47,15 +47,20 @@ export default function Home() {
   return (
     <main>
       <div className="header">
+        <div className="header-line"></div>
         <Link href="https://dotlib.com/">
           <Image src={Logo} alt="Logo DotLib" className="logo" />
         </Link>
-        <h1 className="title">Bulatório Eletrônico</h1>
+        <div className="header-line"></div>
+        <div className="title-container">
+          <h1 className="title t-r">Bulatório</h1>
+          <h1 className="title">Eletrônico</h1>
+        </div>
         <InputArea 
           value={text} 
           onChange={(str: string) => setText(str)} 
         />
-      </div>      
+      </div>
       <Pagination 
         limit={LIMIT} 
         total={totalItens} 
