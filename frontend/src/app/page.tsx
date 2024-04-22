@@ -63,13 +63,6 @@ export default function Home() {
           onChange={(str: string) => setText(str)} 
         />
       </div>
-      <Pagination 
-        limit={LIMIT} 
-        total={totalItens} 
-        offset={offset} 
-        setOffset={setOffset} 
-        setPage={setPage}
-      />
       {
         data && !text && (
           <ul className="list-container">
@@ -98,12 +91,19 @@ export default function Home() {
                   name={medicine.name}
                   company={medicine.company}
                   published_at={medicine.published_at}  
-                />
-              ))
-            }
+                  />
+                ))
+              }
           </ul>
         )
       }
+      <Pagination 
+        limit={LIMIT} 
+        total={totalItens} 
+        offset={offset} 
+        setOffset={setOffset} 
+        setPage={setPage}
+      />
     </main>
   );
 }
