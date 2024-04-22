@@ -9,7 +9,7 @@ import Pagination from "@/components/Pagination/inde";
 import Logo from '../../public/logo.png';
 import Link from "next/link";
 
-const URL = 'http://localhost:3000/';
+const URL = process.env.NEXT_PUBLIC_DB_URL;
 
 const LIMIT = 10;
 
@@ -42,16 +42,17 @@ export default function Home() {
   const medicinesFiltered = useMemo(() => {
     const lowerSearch = text.toLowerCase();
     
-    return data.filter((medicine: any) => medicine.company.toLowerCase().includes(lowerSearch) || medicine.name.toLowerCase().includes(lowerSearch));
+    return data.filter((medicine: any) => medicine.company.toLowerCase().includes(lowerSearch) 
+    || medicine.name.toLowerCase().includes(lowerSearch));
   }, [text, data]);
 
   return (
     <main>
       <div className="header">
         <div className="header-line"></div>
-        <Link href="https://dotlib.com/">
-          <Image src={Logo} alt="Logo DotLib" className="logo" />
-        </Link>
+          <Link href="https://dotlib.com/">
+            <Image src={Logo} alt="Logo DotLib" className="logo" />
+          </Link>
         <div className="header-line"></div>
         <div className="title-container">
           <h1 className="title t-r">Bulatório</h1>

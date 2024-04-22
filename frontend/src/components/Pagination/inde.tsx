@@ -28,7 +28,7 @@ export default function Pagination({ limit, total, offset, setOffset, setPage }:
                                 onClick={() => {
                                     setOffset((page - 1) * limit);
                                     setPage(page);
-                                    }}
+                                }}
                             >
                                 {page}
                             </button>
