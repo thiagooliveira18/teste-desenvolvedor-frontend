@@ -70,7 +70,7 @@ export default function Home() {
       />
       {
         data && !text && (
-          <ul>
+          <ul className="">
             {
               dataCurrentPage.map((medicine: any)=>(
                 <ButtonMedicine

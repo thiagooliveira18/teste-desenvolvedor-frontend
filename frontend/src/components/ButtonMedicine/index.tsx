@@ -1,3 +1,5 @@
+import "./styles.css";
+
 interface Props{
     id: string;
     name: string;
@@ -7,10 +9,10 @@ interface Props{
 
 export default function ButtonMedicine({id, name, company, published_at} : Props){
     return(
-        <button>
-            <h1>{name}</h1>
-            <h2>{company}</h2>
-            <h3>{published_at}</h3>
+        <button className="button-container">
+            <h1 className="button-name button-text">{name}</h1>
+            <h2 className="button-company button-text">{company}</h2>
+            <h3 className="button-published button-text">{published_at}</h3>
         </button>
     );
 }

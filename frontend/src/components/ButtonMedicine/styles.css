@@ -1,0 +1,42 @@
+.button-container {
+    background-color: #a2bd47;
+    width: 100%;
+    height: 12rem;
+    padding: 10px;
+    border: none;
+    border-top: 2px solid #c3c3c3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.button-container:hover {
+    background-color: #afd13f;
+}
+
+.button-text {
+    width: 100%;
+    line-height: 25px;
+    text-align: start;
+}
+.button-name {
+    height: 30%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.button-company {
+    height: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.button-published {
+    height: 20%;
+    font-size: .9rem;
+    font-weight: normal;
+    padding-bottom: 5px;
+}
