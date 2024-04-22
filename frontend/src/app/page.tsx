@@ -41,7 +41,8 @@ export default function Home() {
 
   const medicinesFiltered = useMemo(() => {
     const lowerSearch = text.toLowerCase();
-    return data.filter((medicine: any) => medicine.name.toLowerCase().includes(lowerSearch));
+    
+    return data.filter((medicine: any) => medicine.company.toLowerCase().includes(lowerSearch) || medicine.name.toLowerCase().includes(lowerSearch));
   }, [text, data]);
 
   return (
