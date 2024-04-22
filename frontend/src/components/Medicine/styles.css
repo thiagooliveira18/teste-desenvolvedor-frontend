@@ -1,5 +1,5 @@
 .medicine-modal {
-    background-color: rgba(0, 0, 0, .4);
+    background-color: #6c6c6c;
     width: 100%;
     height: 50vh;
     padding: 5px;
@@ -16,7 +16,7 @@
 
 .close {
     grid-area: x;
-    
+
     background-color: #c70e0e;
     width: 30px;
     height: 30px;
@@ -33,4 +33,81 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: .15s ease-in-out;
+}
+
+.close:hover {
+    background-color: #ff0000;
+}
+.medicine-container {
+    grid-area: content;
+    
+    width: 100%;
+    height: 100%;
+    padding: 20px 0 20px 0;
+    gap: 100px;
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+}
+.medicine-container h2 {
+    margin-bottom: 15px;
+}
+
+.act-name {
+    font-size: 1rem;
+}
+.act-container {
+    width: 100%;
+    height: 170px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+
+}
+.act-container p {
+    font-size: 0.9rem;
+}
+
+.button-download-container {
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+    .medicine-container h2 {
+        font-size: 1.2rem;
+    }
+    .medicine-container {
+        gap: 0;
+    }
+    .act-container {
+        height: 150px;
+    }
+    .act-princ {
+        width: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .act-princ h2 {
+        font-size: 1.2rem;
+    }
+    .act-container{
+        border: 2px solid #000;
+        border-radius: 15px;
+        padding: 10px;
+    }
+    .act-container p {
+        font-size: .7rem;
+    }
 }
